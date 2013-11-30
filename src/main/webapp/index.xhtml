@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+  <f:view contentType="text/html">
+    <h:head>
+      <f:facet name="first">
+        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+        <title>NDC CI - Register - Home</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+      </f:facet>
+    </h:head>
+
+    <h:body>
+      <p:layout fullPage="true">
+        <p:layoutUnit position="north" size="130" 
+                      closable="true" collapsible="true">
+          <p:panelGrid columns="3">
+            <p:panel style="width: 500px">
+              <br/>
+              <h2>NDC-CI Register Arbeid onder Overdruk</h2>
+              <br/>
+            </p:panel>
+            <p:panel style="width: 120px; height: 95px">
+              <p:graphicImage id="logo" value="/resources/images/afb04.jpg"
+                              style="height: 85px; width: 95px" >                    
+              </p:graphicImage>
+            </p:panel>
+            <p:panel style="width: 500px">
+              <br/>
+              <h2>Initiatief van SWOD en gezamenlijke CI's </h2>
+              <br/>
+            </p:panel>
+          </p:panelGrid>
+        </p:layoutUnit>
+
+        <p:layoutUnit position="west" size="240" header="Menu" collapsible="true">
+          <h:form>
+            <p:panel rendered="#{loginBean.loggedIn}">
+              <h:outputText value="Hallo #{loginBean.uname}" ></h:outputText>
+              <br/>
+              <p:commandLink  value="Log Uit" id="logoutlnk" 
+                              action="#{loginBean.logout()}"></p:commandLink>
+            </p:panel>
+            <p:menu>
+              <p:menuitem value="Certificering" 
+                          url="/faces/pages/registratie.xhtml" ></p:menuitem>
+              <p:menuitem value="Her-certificering" 
+                          url="/faces/pages/registratie.xhtml" ></p:menuitem>
+              <p:menuitem value="Buitenlandse EU cert." 
+                          url="/faces/pages/registratie.xhtml" ></p:menuitem>
+              <p:menuitem value="Buitenlandse niet-EU cert." 
+                          url="/faces/pages/registratie.xhtml"></p:menuitem>>
+              <p:menuitem value="Frequent gestelde vragen" 
+                          url="/faces/pages/registratie.xhtml" ></p:menuitem>
+              <p:menuitem value="Zoeken in het Register" 
+                          url="/faces/pages/zoeken.xhtml" ></p:menuitem>
+              <p:menuitem value="Contact" 
+                          url="/faces/pages/registratie.xhtml" ></p:menuitem>
+              <p:menuitem value="Over NDC-CI" 
+                          url="/faces/pages/registratie.xhtml" ></p:menuitem>
+              <p:menuitem value="Mijn certificaten" 
+                          url="/faces/secured/mijnindex.xhtml" 
+                          rendered="#{loginBean.loggedIn}" ></p:menuitem>
+              <p:menuitem value="Inloggen" 
+                          url="/faces/login.xhtml" 
+                          rendered="#{!loginBean.loggedIn}" ></p:menuitem>
+            </p:menu>
+          </h:form>
+        </p:layoutUnit>
+
+        <p:layoutUnit position="center" >
+          <p:accordionPanel id="accpanel">
+            <p:tab title="Nieuws">
+              <h:form>
+                <h:panelGroup rendered="#{duiknieuwsController.items.rowCount > 0}">
+                  <p:dataTable value="#{duiknieuwsController.items}" var="item">
+                    <p:column>
+                      <f:facet name="header">
+                        <h:outputText value="#{bundle.ListDuiknieuwsTitle_datumnews}"/>
+                      </f:facet>
+                      <h:outputText value="#{item.datumnews}">
+                        <f:convertDateTime pattern="dd-MM-yyyy" />
+                      </h:outputText>
+                    </p:column>
+                    <p:column>
+                      <f:facet name="header">
+                        <h:outputText value="#{bundle.ListDuiknieuwsTitle_taal}"/>
+                      </f:facet>
+                      <h:outputText value="#{item.taal}"/>
+                    </p:column>
+                    <p:column>
+                      <f:facet name="header">
+                        <h:outputText value="#{bundle.ListDuiknieuwsTitle_tekst}"/>
+                      </f:facet>
+                      <h:outputText value="#{item.tekst}"/>
+                    </p:column>
+                  </p:dataTable>
+                  <p:commandLink  value="Archief" id="archieflnk" 
+                                  action="#"></p:commandLink>
+
+                </h:panelGroup>
+              </h:form>
+            </p:tab>
+            <p:tab title="Vergaderkalender">
+              <p:panelGrid columns="3">
+                <h:outputText value="27-05-2013"></h:outputText>
+                <h:outputText value="Overleg met I-SZW"></h:outputText>
+                <h:outputText value="Korte tekst"></h:outputText>
+              </p:panelGrid>
+            </p:tab>
+            <p:tab title="Ingetrokken certificaten">
+              <p:panelGrid columns="2">
+                <h:outputText value="03-04-2013"></h:outputText>
+                <h:outputText value="00-000AA000-AA"></h:outputText>
+              </p:panelGrid>
+            </p:tab>
+          </p:accordionPanel>
+        </p:layoutUnit>
+
+        <p:layoutUnit position="east" size="300" header="Hulp" collapsible="true">
+          <p:commandLink  value="Ik wil/moet mijn certificaat verlengen" id="certlnk" 
+                          action="#"></p:commandLink><br/>
+          <h5>A. Duikers/Overige Arbeid onder overdruk :</h5>
+          * <p:commandLink  value="Ik wil een duik invoeren" id="duikinlnk" 
+                            action="#"></p:commandLink><br/>
+          * <p:commandLink  value="Ik zoek een gecertificeerde duikerarts" 
+                            id="duikartslnk" 
+                            action="#"></p:commandLink><br/>
+          * <p:commandLink  value="Ik wil een uitdraai van mijn digitaal duiklogboek" 
+                            id="dlogboeklnk" 
+                            action="#"></p:commandLink>
+          <h5>B. Duikerploegleiders :</h5>
+          * <p:commandLink  value="Ik wil een door mij geleide duik invoeren" 
+                            id="supinlnk" 
+                            action="#"></p:commandLink><br/>
+          * <p:commandLink  value="Ik wil een uitdraai van mijn digitaal supervisor-logboek" 
+                            id="slogboeklnk" 
+                            action="#"></p:commandLink>
+          <h5>C. Duikmed. Begeleiders :</h5>
+          * <p:commandLink  value="Ik wil een cursus/stage invoeren" id="beglinlnk" 
+                            action="#"></p:commandLink>
+          <h5>D. Duikerartsen :</h5>
+          * <p:commandLink  value="Ik wil een keuring invoeren" id="keurinlnk" 
+                            action="#"></p:commandLink><br/>
+          * <p:commandLink  value="Ik wil een cursus/congres invoeren" id="cursinlnk" 
+                            action="#"></p:commandLink><br/>
+          * <p:commandLink  value="Ik wil een uitdraai van mijn keuringen" 
+                            id="keurloglnk" 
+                            action="#"></p:commandLink>
+          
+        </p:layoutUnit>
+      </p:layout>
+      <br />
+    </h:body>
+  </f:view>
+</html>
+
