@@ -38,7 +38,7 @@
           </p:panelGrid>
         </p:layoutUnit>
 
-        <p:layoutUnit position="west" size="240" header="Menu" collapsible="true">
+        <p:layoutUnit position="west" size="220" header="Menu" collapsible="true">
           <h:form>
             <p:panel rendered="#{loginBean.loggedIn}">
               <h:outputText value="Hallo #{loginBean.uname}" ></h:outputText>
@@ -79,19 +79,13 @@
               <h:form>
                 <h:panelGroup rendered="#{duiknieuwsController.items.rowCount > 0}">
                   <p:dataTable value="#{duiknieuwsController.items}" var="item">
-                    <p:column>
+                      <p:column  style="width:50px">
                       <f:facet name="header">
                         <h:outputText value="#{bundle.ListDuiknieuwsTitle_datumnews}"/>
                       </f:facet>
                       <h:outputText value="#{item.datumnews}">
                         <f:convertDateTime pattern="dd-MM-yyyy" />
                       </h:outputText>
-                    </p:column>
-                    <p:column>
-                      <f:facet name="header">
-                        <h:outputText value="#{bundle.ListDuiknieuwsTitle_taal}"/>
-                      </f:facet>
-                      <h:outputText value="#{item.taal}"/>
                     </p:column>
                     <p:column>
                       <f:facet name="header">
