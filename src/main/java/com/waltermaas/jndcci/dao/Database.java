@@ -8,19 +8,19 @@ import java.sql.DriverManager;
  * @author wmaas
  */
 public class Database {
-  
+
   public static Connection getConnection() {
     try {
       Class.forName("com.mysql.jdbc.Driver");
       Connection con = DriverManager.
-              getConnection("jdbc:mysql://192.168.1.101/duikerlogboek","root","walter");
+              getConnection("jdbc:mysql://192.168.1.203/duikerlogboek", "root", "walter");
       return con;
     } catch (Exception ex) {
-      System.out.println("Database getConnection ERROR ==> "+ex.getMessage());
+      System.out.println("Database getConnection ERROR ==> " + ex.getMessage());
       return null;
-    }    
+    }
   }
-  
+
   public static void close(Connection con) {
     try {
       con.close();
@@ -28,5 +28,5 @@ public class Database {
       //
     }
   }
-  
+
 }
