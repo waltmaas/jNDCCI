@@ -46,29 +46,40 @@
               <p:commandLink  value="Log Uit" id="logoutlnk" 
                               action="#{loginBean.logout()}"></p:commandLink>
             </p:panel>
-            <p:menu>
-              <p:menuitem value="Certificering" 
-                          url="/faces/pages/registratie.xhtml" ></p:menuitem>
-              <p:menuitem value="Her-certificering" 
-                          url="/faces/pages/registratie.xhtml" ></p:menuitem>
-              <p:menuitem value="Buitenlandse EU cert." 
-                          url="/faces/pages/registratie.xhtml" ></p:menuitem>
-              <p:menuitem value="Buitenlandse niet-EU cert." 
-                          url="/faces/pages/registratie.xhtml"></p:menuitem>>
-              <p:menuitem value="Frequent gestelde vragen" 
-                          url="/faces/pages/registratie.xhtml" ></p:menuitem>
-              <p:menuitem value="Zoeken in het Register" 
-                          url="/faces/pages/zoeken.xhtml" ></p:menuitem>
-              <p:menuitem value="Contact" 
-                          url="/faces/pages/registratie.xhtml" ></p:menuitem>
-              <p:menuitem value="Over NDC-CI" 
-                          url="/faces/pages/registratie.xhtml" ></p:menuitem>
-              <p:menuitem value="Mijn certificaten" 
-                          url="/faces/secured/mijnindex.xhtml" 
-                          rendered="#{loginBean.loggedIn}" ></p:menuitem>
-              <p:menuitem value="Inloggen" 
-                          url="/faces/login.xhtml" 
-                          rendered="#{!loginBean.loggedIn}" ></p:menuitem>
+
+            <p:menu id="leftMenu">
+              <p:menuitem url="/faces/pages/registratie.xhtml" 
+                value="Certificering">
+              </p:menuitem>
+              <p:menuitem url="/faces/pages/registratie.xhtml"
+                value="Her-certificering ">
+              </p:menuitem>
+              <p:menuitem url="/faces/pages/registratie.xhtml"
+                value="Buitenlandse EU cert.">
+              </p:menuitem>
+              <p:menuitem url="/faces/pages/registratie.xhtml"
+                value="Buitenlandse niet-EU cert.">
+              </p:menuitem>
+              <p:menuitem url="/faces/pages/registratie.xhtml"
+                value="Frequent gestelde vragen ">
+              </p:menuitem>
+              <p:menuitem url="/faces/pages/zoeken.xhtml"
+                value="Zoeken in het Register">
+              </p:menuitem>
+              <p:menuitem url="/faces/pages/registratie.xhtml"
+                value="Contact">
+              </p:menuitem>
+              <p:menuitem url="/faces/pages/registratie.xhtml"
+                value="Over NDC-CI">
+              </p:menuitem>
+              <p:menuitem url="faces/secured/mijnindex.xhtml"
+                          rendered="#{loginBean.loggedIn}"
+                          value="Mijn certificaten">               
+              </p:menuitem>
+              <p:menuitem url="/faces/login.xhtml"
+                          rendered="#{!loginBean.loggedIn}"
+                          value="Inloggen">               
+              </p:menuitem>
             </p:menu>
           </h:form>
         </p:layoutUnit>
@@ -79,7 +90,7 @@
               <h:form>
                 <h:panelGroup rendered="#{duiknieuwsController.items.rowCount > 0}">
                   <p:dataTable value="#{duiknieuwsController.items}" var="item">
-                      <p:column  style="width:50px">
+                    <p:column  style="width:50px">
                       <f:facet name="header">
                         <h:outputText value="#{bundle.ListDuiknieuwsTitle_datumnews}"/>
                       </f:facet>
@@ -146,7 +157,7 @@
           * <p:commandLink  value="Ik wil een uitdraai van mijn keuringen" 
                             id="keurloglnk" 
                             action="#"></p:commandLink>
-          
+
         </p:layoutUnit>
       </p:layout>
       <br />
