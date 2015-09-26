@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
-  "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
@@ -49,28 +48,28 @@
 
             <p:menu id="leftMenu">
               <p:menuitem url="/faces/pages/registratie.xhtml" 
-                value="Certificering">
+                          value="Certificering">
               </p:menuitem>
               <p:menuitem url="/faces/pages/registratie.xhtml"
-                value="Her-certificering ">
+                          value="Her-certificering ">
               </p:menuitem>
               <p:menuitem url="/faces/pages/registratie.xhtml"
-                value="Buitenlandse EU cert.">
+                          value="Buitenlandse EU cert.">
               </p:menuitem>
               <p:menuitem url="/faces/pages/registratie.xhtml"
-                value="Buitenlandse niet-EU cert.">
+                          value="Buitenlandse niet-EU cert.">
               </p:menuitem>
               <p:menuitem url="/faces/pages/registratie.xhtml"
-                value="Frequent gestelde vragen ">
+                          value="Frequent gestelde vragen ">
               </p:menuitem>
               <p:menuitem url="/faces/pages/zoeken.xhtml"
-                value="Zoeken in het Register">
+                          value="Zoeken in het Register">
               </p:menuitem>
               <p:menuitem url="/faces/pages/registratie.xhtml"
-                value="Contact">
+                          value="Contact">
               </p:menuitem>
               <p:menuitem url="/faces/pages/registratie.xhtml"
-                value="Over NDC-CI">
+                          value="Over NDC-CI">
               </p:menuitem>
               <p:menuitem url="faces/secured/mijnindex.xhtml"
                           rendered="#{loginBean.loggedIn}"
@@ -90,7 +89,7 @@
               <h:form>
                 <h:panelGroup rendered="#{duiknieuwsController.items.rowCount > 0}">
                   <p:dataTable value="#{duiknieuwsController.items}" var="item">
-                    <p:column  style="width:50px">
+                    <p:column  style="width:80px">
                       <f:facet name="header">
                         <h:outputText value="#{bundle.ListDuiknieuwsTitle_datumnews}"/>
                       </f:facet>
@@ -128,22 +127,20 @@
         </p:layoutUnit>
 
         <p:layoutUnit position="east" size="300" header="Hulp" collapsible="true">
-          <p:commandLink  value="Ik wil/moet mijn certificaat verlengen" id="certlnk" 
-                          action="#"></p:commandLink><br/>
           <h5>A. Duikers/Overige Arbeid onder overdruk :</h5>
           * <p:commandLink  value="Ik wil een duik invoeren" id="duikinlnk" 
                             action="#"></p:commandLink><br/>
           * <p:commandLink  value="Ik zoek een gecertificeerde duikerarts" 
                             id="duikartslnk" 
                             action="#"></p:commandLink><br/>
-          * <p:commandLink  value="Ik wil een uitdraai van mijn digitaal duiklogboek" 
+          * <p:commandLink  value="Ik wil een uitdraai van mijn duiklogboek" 
                             id="dlogboeklnk" 
                             action="#"></p:commandLink>
           <h5>B. Duikerploegleiders :</h5>
           * <p:commandLink  value="Ik wil een door mij geleide duik invoeren" 
                             id="supinlnk" 
                             action="#"></p:commandLink><br/>
-          * <p:commandLink  value="Ik wil een uitdraai van mijn digitaal supervisor-logboek" 
+          * <p:commandLink  value="Ik wil een uitdraai van mijn supervisor-logboek" 
                             id="slogboeklnk" 
                             action="#"></p:commandLink>
           <h5>C. Duikmed. Begeleiders :</h5>
@@ -158,6 +155,10 @@
                             id="keurloglnk" 
                             action="#"></p:commandLink>
 
+        </p:layoutUnit>
+        <p:layoutUnit position="south" size="60" 
+                      closable="true" collapsible="true">
+              <h5>Copyright 2013-29015 Walter Maas</h5>
         </p:layoutUnit>
       </p:layout>
       <br />
