@@ -99,9 +99,6 @@
                       <h:outputText value="#{item.tekst}"/>
                     </p:column>
                   </p:dataTable>
-                  <p:commandLink  value="Archief" id="archieflnk" 
-                                  action="#"></p:commandLink>
-
                 </h:panelGroup>
               </h:form>
             </p:tab>
@@ -119,6 +116,8 @@
               </p:panelGrid>
             </p:tab>
           </p:accordionPanel>
+          <p:commandLink  value="Archief" id="archieflnk" 
+                          action="/faces/pages/duiknieuws/List" ></p:commandLink>
         </p:layoutUnit>
 
         <p:layoutUnit position="east" size="300" header="Hulp" collapsible="true">
@@ -143,7 +142,7 @@
                             action="#"></p:commandLink>
           <h5>D. Duikerartsen :</h5>
           * <p:commandLink  value="Ik wil een keuring invoeren" id="keurinlnk" 
-                            action="#"></p:commandLink><br/>
+                            action="/faces/pages/zoeken"></p:commandLink><br/>
           * <p:commandLink  value="Ik wil een cursus/congres invoeren" id="cursinlnk" 
                             action="#"></p:commandLink><br/>
           * <p:commandLink  value="Ik wil een uitdraai van mijn keuringen" 
@@ -153,7 +152,7 @@
         </p:layoutUnit>
         <p:layoutUnit position="south" size="70" 
                       closable="true" collapsible="true">
-              <h5>Copyright 2013-2015 Walter Maas</h5>
+          <h5>Copyright 2013-2015 Walter Maas</h5>
         </p:layoutUnit>
       </p:layout>
       <br />
