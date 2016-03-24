@@ -19,7 +19,7 @@
           <h:inputText id="keyid" value="#{duiknieuwsController.selected.keyid}" title="#{bundle.EditDuiknieuwsTitle_keyid}" required="true" requiredMessage="#{bundle.EditDuiknieuwsRequiredMessage_keyid}"/>
           <h:outputLabel value="#{bundle.EditDuiknieuwsLabel_datumnews}" for="datumnews" />
           <h:inputText id="datumnews" value="#{duiknieuwsController.selected.datumnews}" title="#{bundle.EditDuiknieuwsTitle_datumnews}" required="true" requiredMessage="#{bundle.EditDuiknieuwsRequiredMessage_datumnews}">
-            <f:convertDateTime pattern="MM/dd/yyyy" />
+            <f:convertDateTime pattern="dd-MM-yyyy" />
           </h:inputText>
           <h:outputLabel value="#{bundle.EditDuiknieuwsLabel_taal}" for="taal" />
           <h:inputText id="taal" value="#{duiknieuwsController.selected.taal}" title="#{bundle.EditDuiknieuwsTitle_taal}" required="true" requiredMessage="#{bundle.EditDuiknieuwsRequiredMessage_taal}"/>

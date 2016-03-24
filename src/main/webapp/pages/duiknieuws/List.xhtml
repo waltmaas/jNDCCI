@@ -4,64 +4,66 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+  <body>
+    <ui:composition template="/pages/template.xhtml">
 
-  <ui:composition template="/pages/template.xhtml">
-    <ui:define name="content">
-      <h:form styleClass="jsfcrud_list_form">
-        <h:panelGroup id="messagePanel" layout="block">
-          <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-        </h:panelGroup>
-        <h:outputText escape="false" value="#{bundle.ListDuiknieuwsEmpty}" rendered="#{duiknieuwsController.items.rowCount == 0}"/>
-        <h:panelGroup rendered="#{duiknieuwsController.items.rowCount > 0}">
-          <h:outputText value="#{duiknieuwsController.pagination.pageFirstItem + 1}..#{duiknieuwsController.pagination.pageLastItem + 1}/#{duiknieuwsController.pagination.itemsCount}"/>&nbsp;
-          <h:commandLink action="#{duiknieuwsController.previous}" value="#{bundle.Previous} #{duiknieuwsController.pagination.pageSize}" rendered="#{duiknieuwsController.pagination.hasPreviousPage}"/>&nbsp;
-          <h:commandLink action="#{duiknieuwsController.next}" value="#{bundle.Next} #{duiknieuwsController.pagination.pageSize}" rendered="#{duiknieuwsController.pagination.hasNextPage}"/>&nbsp;
-          <h:dataTable value="#{duiknieuwsController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-            <h:column>
-              <f:facet name="header">
-                <h:outputText value="#{bundle.ListDuiknieuwsTitle_keyid}"/>
-              </f:facet>
-              <h:outputText value="#{item.keyid}"/>
-            </h:column>
-            <h:column>
-              <f:facet name="header">
-                <h:outputText value="#{bundle.ListDuiknieuwsTitle_datumnews}"/>
-              </f:facet>
-              <h:outputText value="#{item.datumnews}">
-                <f:convertDateTime pattern="MM/dd/yyyy" />
-              </h:outputText>
-            </h:column>
-            <h:column>
-              <f:facet name="header">
-                <h:outputText value="#{bundle.ListDuiknieuwsTitle_taal}"/>
-              </f:facet>
-              <h:outputText value="#{item.taal}"/>
-            </h:column>
-            <h:column>
-              <f:facet name="header">
-                <h:outputText value="#{bundle.ListDuiknieuwsTitle_tekst}"/>
-              </f:facet>
-              <h:outputText value="#{item.tekst}"/>
-            </h:column>
-            <h:column>
-              <f:facet name="header">
-                <h:outputText value="&nbsp;"/>
-              </f:facet>
-              <h:commandLink action="#{duiknieuwsController.prepareView}" value="#{bundle.ListDuiknieuwsViewLink}"/>
-              <h:outputText value=" "/>
-              <h:commandLink action="#{duiknieuwsController.prepareEdit}" value="#{bundle.ListDuiknieuwsEditLink}"/>
-              <h:outputText value=" "/>
-              <h:commandLink action="#{duiknieuwsController.destroy}" value="#{bundle.ListDuiknieuwsDestroyLink}"/>
-            </h:column>
-          </h:dataTable>
-        </h:panelGroup>
-        <br />
-        <h:commandLink action="#{duiknieuwsController.prepareCreate}" value="#{bundle.ListDuiknieuwsCreateLink}"/>
-        <br />
-        <br />
-        <h:link outcome="/index" value="#{bundle.ListDuiknieuwsIndexLink}"/>
-      </h:form>
-    </ui:define>
-  </ui:composition>
+      <ui:define name="content">
+        <h:form styleClass="jsfcrud_list_form">
+          <h:panelGroup id="messagePanel" layout="block">
+            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+          </h:panelGroup>
+          <h:outputText escape="false" value="#{bundle.ListDuiknieuwsEmpty}" rendered="#{duiknieuwsController.items.rowCount == 0}"/>
+          <h:panelGroup rendered="#{duiknieuwsController.items.rowCount > 0}">
+            <h:outputText value="#{duiknieuwsController.pagination.pageFirstItem + 1}..#{duiknieuwsController.pagination.pageLastItem + 1}/#{duiknieuwsController.pagination.itemsCount}"/>&nbsp;
+            <h:commandLink action="#{duiknieuwsController.previous}" value="#{bundle.Previous} #{duiknieuwsController.pagination.pageSize}" rendered="#{duiknieuwsController.pagination.hasPreviousPage}"/>&nbsp;
+            <h:commandLink action="#{duiknieuwsController.next}" value="#{bundle.Next} #{duiknieuwsController.pagination.pageSize}" rendered="#{duiknieuwsController.pagination.hasNextPage}"/>&nbsp;
+            <h:dataTable value="#{duiknieuwsController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+              <h:column>
+                <f:facet name="header">
+                  <h:outputText value="#{bundle.ListDuiknieuwsTitle_keyid}"/>
+                </f:facet>
+                <h:outputText value="#{item.keyid}"/>
+              </h:column>
+              <h:column>
+                <f:facet name="header">
+                  <h:outputText value="#{bundle.ListDuiknieuwsTitle_datumnews}"/>
+                </f:facet>
+                <h:outputText value="#{item.datumnews}">
+                  <f:convertDateTime pattern="dd-MM-yyyy" />
+                </h:outputText>
+              </h:column>
+              <h:column>
+                <f:facet name="header">
+                  <h:outputText value="#{bundle.ListDuiknieuwsTitle_taal}"/>
+                </f:facet>
+                <h:outputText value="#{item.taal}"/>
+              </h:column>
+              <h:column>
+                <f:facet name="header">
+                  <h:outputText value="#{bundle.ListDuiknieuwsTitle_tekst}"/>
+                </f:facet>
+                <h:outputText value="#{item.tekst}"/>
+              </h:column>
+              <h:column>
+                <f:facet name="header">
+                  <h:outputText value="&nbsp;"/>
+                </f:facet>
+                <h:commandLink action="#{duiknieuwsController.prepareView}" value="#{bundle.ListDuiknieuwsViewLink}"/>
+                <h:outputText value=" "/>
+                <h:commandLink action="#{duiknieuwsController.prepareEdit}" value="#{bundle.ListDuiknieuwsEditLink}"/>
+                <h:outputText value=" "/>
+                <h:commandLink action="#{duiknieuwsController.destroy}" value="#{bundle.ListDuiknieuwsDestroyLink}"/>
+              </h:column>
+            </h:dataTable>
+          </h:panelGroup>
+          <br />
+          <h:commandLink action="#{duiknieuwsController.prepareCreate}" value="#{bundle.ListDuiknieuwsCreateLink}"/>
+          <br />
+          <br />
+          <h:link outcome="/index" value="#{bundle.ListDuiknieuwsIndexLink}"/>
+        </h:form>
+      </ui:define>
+    </ui:composition>
+  </body>
 
 </html>

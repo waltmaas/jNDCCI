@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+  <ui:composition>
+
+    <p:dialog id="DuikerEditDlg" widgetVar="DuikerEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditDuikerTitle}">
+      <h:form id="DuikerEditForm">
+        <h:panelGroup id="display">
+          <p:panelGrid columns="2" rendered="#{duikerController.selected != null}">
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrDuikerid}" for="dkrDuikerid" />
+            <p:inputText id="dkrDuikerid" value="#{duikerController.selected.dkrDuikerid}" title="#{bundle.EditDuikerTitle_dkrDuikerid}" required="true" requiredMessage="#{bundle.EditDuikerRequiredMessage_dkrDuikerid}"/>
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrAnaam}" for="dkrAnaam" />
+            <p:inputText id="dkrAnaam" value="#{duikerController.selected.dkrAnaam}" title="#{bundle.EditDuikerTitle_dkrAnaam}" required="true" requiredMessage="#{bundle.EditDuikerRequiredMessage_dkrAnaam}"/>
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrVnaam}" for="dkrVnaam" />
+            <p:inputText id="dkrVnaam" value="#{duikerController.selected.dkrVnaam}" title="#{bundle.EditDuikerTitle_dkrVnaam}" />
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrGebdatum}" for="dkrGebdatum" />
+            <p:calendar id="dkrGebdatum" pattern="MM/dd/yyyy" value="#{duikerController.selected.dkrGebdatum}" title="#{bundle.EditDuikerTitle_dkrGebdatum}"  showOn="button"/>
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrOpmerk}" for="dkrOpmerk" />
+            <p:inputText id="dkrOpmerk" value="#{duikerController.selected.dkrOpmerk}" title="#{bundle.EditDuikerTitle_dkrOpmerk}" />
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrFactadres1}" for="dkrFactadres1" />
+            <p:inputText id="dkrFactadres1" value="#{duikerController.selected.dkrFactadres1}" title="#{bundle.EditDuikerTitle_dkrFactadres1}" required="true" requiredMessage="#{bundle.EditDuikerRequiredMessage_dkrFactadres1}"/>
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrFactadres2}" for="dkrFactadres2" />
+            <p:inputText id="dkrFactadres2" value="#{duikerController.selected.dkrFactadres2}" title="#{bundle.EditDuikerTitle_dkrFactadres2}" />
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrFactstad}" for="dkrFactstad" />
+            <p:inputText id="dkrFactstad" value="#{duikerController.selected.dkrFactstad}" title="#{bundle.EditDuikerTitle_dkrFactstad}" required="true" requiredMessage="#{bundle.EditDuikerRequiredMessage_dkrFactstad}"/>
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrFactpc}" for="dkrFactpc" />
+            <p:inputText id="dkrFactpc" value="#{duikerController.selected.dkrFactpc}" title="#{bundle.EditDuikerTitle_dkrFactpc}" required="true" requiredMessage="#{bundle.EditDuikerRequiredMessage_dkrFactpc}"/>
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrFactland}" for="dkrFactland" />
+            <p:inputText id="dkrFactland" value="#{duikerController.selected.dkrFactland}" title="#{bundle.EditDuikerTitle_dkrFactland}" required="true" requiredMessage="#{bundle.EditDuikerRequiredMessage_dkrFactland}"/>
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrPin}" for="dkrPin" />
+            <p:inputText id="dkrPin" value="#{duikerController.selected.dkrPin}" title="#{bundle.EditDuikerTitle_dkrPin}" required="true" requiredMessage="#{bundle.EditDuikerRequiredMessage_dkrPin}"/>
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrNummer}" for="dkrNummer" />
+            <p:inputText id="dkrNummer" value="#{duikerController.selected.dkrNummer}" title="#{bundle.EditDuikerTitle_dkrNummer}" required="true" requiredMessage="#{bundle.EditDuikerRequiredMessage_dkrNummer}"/>
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrTelvast}" for="dkrTelvast" />
+            <p:inputText id="dkrTelvast" value="#{duikerController.selected.dkrTelvast}" title="#{bundle.EditDuikerTitle_dkrTelvast}" />
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrGsm}" for="dkrGsm" />
+            <p:inputText id="dkrGsm" value="#{duikerController.selected.dkrGsm}" title="#{bundle.EditDuikerTitle_dkrGsm}" />
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrEmail}" for="dkrEmail" />
+            <p:inputText id="dkrEmail" value="#{duikerController.selected.dkrEmail}" title="#{bundle.EditDuikerTitle_dkrEmail}" required="true" requiredMessage="#{bundle.EditDuikerRequiredMessage_dkrEmail}"/>
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrDataanmeld}" for="dkrDataanmeld" />
+            <p:calendar id="dkrDataanmeld" pattern="MM/dd/yyyy" value="#{duikerController.selected.dkrDataanmeld}" title="#{bundle.EditDuikerTitle_dkrDataanmeld}"  showOn="button"/>
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrTmpWwoord}" for="dkrTmpWwoord" />
+            <p:inputText id="dkrTmpWwoord" value="#{duikerController.selected.dkrTmpWwoord}" title="#{bundle.EditDuikerTitle_dkrTmpWwoord}" />
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrIsaccVoorw}" for="dkrIsaccVoorw" />
+            <p:inputText id="dkrIsaccVoorw" value="#{duikerController.selected.dkrIsaccVoorw}" title="#{bundle.EditDuikerTitle_dkrIsaccVoorw}" />
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrAccountActief}" for="dkrAccountActief" />
+            <p:inputText id="dkrAccountActief" value="#{duikerController.selected.dkrAccountActief}" title="#{bundle.EditDuikerTitle_dkrAccountActief}" required="true" requiredMessage="#{bundle.EditDuikerRequiredMessage_dkrAccountActief}"/>
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrAccountVerif}" for="dkrAccountVerif" />
+            <p:inputText id="dkrAccountVerif" value="#{duikerController.selected.dkrAccountVerif}" title="#{bundle.EditDuikerTitle_dkrAccountVerif}" required="true" requiredMessage="#{bundle.EditDuikerRequiredMessage_dkrAccountVerif}"/>
+            <p:outputLabel value="#{bundle.EditDuikerLabel_dkrAccVerDoor}" for="dkrAccVerDoor" />
+            <p:inputText id="dkrAccVerDoor" value="#{duikerController.selected.dkrAccVerDoor}" title="#{bundle.EditDuikerTitle_dkrAccVerDoor}" />
+          </p:panelGrid>
+          <p:commandButton actionListener="#{duikerController.update}" value="#{bundle.Save}" update="display,:DuikerListForm:datalist,:growl" oncomplete="handleSubmit(args, 'DuikerEditDialog');"/>
+          <p:commandButton value="#{bundle.Cancel}" onclick="DuikerEditDialog.hide()"/>
+        </h:panelGroup>
+      </h:form>
+    </p:dialog>
+
+  </ui:composition>
+</html>

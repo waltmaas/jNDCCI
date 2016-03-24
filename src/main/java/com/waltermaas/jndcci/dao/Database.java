@@ -13,7 +13,7 @@ public class Database {
     try {
       Class.forName("com.mysql.jdbc.Driver");
       Connection con = DriverManager.
-              getConnection("jdbc:mysql://192.168.1.203/duikerlogboek", "root", "walter");
+              getConnection("jdbc:mysql://192.168.1.203/duikerlogboek", "wmaas", "jeju0044");
       return con;
     } catch (Exception ex) {
       System.out.println("Database getConnection ERROR ==> " + ex.getMessage());

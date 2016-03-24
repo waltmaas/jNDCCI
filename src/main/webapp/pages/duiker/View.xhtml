@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+  <ui:composition>
+
+    <p:dialog id="DuikerViewDlg" widgetVar="DuikerViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewDuikerTitle}">
+      <h:form id="DuikerViewForm">
+        <h:panelGroup id="display">
+          <p:panelGrid columns="2" rendered="#{duikerController.selected != null}">
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrDuikerid}"/>
+            <h:outputText value="#{duikerController.selected.dkrDuikerid}" title="#{bundle.ViewDuikerTitle_dkrDuikerid}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrAnaam}"/>
+            <h:outputText value="#{duikerController.selected.dkrAnaam}" title="#{bundle.ViewDuikerTitle_dkrAnaam}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrVnaam}"/>
+            <h:outputText value="#{duikerController.selected.dkrVnaam}" title="#{bundle.ViewDuikerTitle_dkrVnaam}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrGebdatum}"/>
+            <h:outputText value="#{duikerController.selected.dkrGebdatum}" title="#{bundle.ViewDuikerTitle_dkrGebdatum}">
+              <f:convertDateTime pattern="MM/dd/yyyy" />
+            </h:outputText>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrOpmerk}"/>
+            <h:outputText value="#{duikerController.selected.dkrOpmerk}" title="#{bundle.ViewDuikerTitle_dkrOpmerk}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrFactadres1}"/>
+            <h:outputText value="#{duikerController.selected.dkrFactadres1}" title="#{bundle.ViewDuikerTitle_dkrFactadres1}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrFactadres2}"/>
+            <h:outputText value="#{duikerController.selected.dkrFactadres2}" title="#{bundle.ViewDuikerTitle_dkrFactadres2}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrFactstad}"/>
+            <h:outputText value="#{duikerController.selected.dkrFactstad}" title="#{bundle.ViewDuikerTitle_dkrFactstad}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrFactpc}"/>
+            <h:outputText value="#{duikerController.selected.dkrFactpc}" title="#{bundle.ViewDuikerTitle_dkrFactpc}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrFactland}"/>
+            <h:outputText value="#{duikerController.selected.dkrFactland}" title="#{bundle.ViewDuikerTitle_dkrFactland}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrPin}"/>
+            <h:outputText value="#{duikerController.selected.dkrPin}" title="#{bundle.ViewDuikerTitle_dkrPin}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrNummer}"/>
+            <h:outputText value="#{duikerController.selected.dkrNummer}" title="#{bundle.ViewDuikerTitle_dkrNummer}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrTelvast}"/>
+            <h:outputText value="#{duikerController.selected.dkrTelvast}" title="#{bundle.ViewDuikerTitle_dkrTelvast}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrGsm}"/>
+            <h:outputText value="#{duikerController.selected.dkrGsm}" title="#{bundle.ViewDuikerTitle_dkrGsm}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrEmail}"/>
+            <h:outputText value="#{duikerController.selected.dkrEmail}" title="#{bundle.ViewDuikerTitle_dkrEmail}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrDataanmeld}"/>
+            <h:outputText value="#{duikerController.selected.dkrDataanmeld}" title="#{bundle.ViewDuikerTitle_dkrDataanmeld}">
+              <f:convertDateTime pattern="MM/dd/yyyy" />
+            </h:outputText>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrTmpWwoord}"/>
+            <h:outputText value="#{duikerController.selected.dkrTmpWwoord}" title="#{bundle.ViewDuikerTitle_dkrTmpWwoord}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrIsaccVoorw}"/>
+            <h:outputText value="#{duikerController.selected.dkrIsaccVoorw}" title="#{bundle.ViewDuikerTitle_dkrIsaccVoorw}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrAccountActief}"/>
+            <h:outputText value="#{duikerController.selected.dkrAccountActief}" title="#{bundle.ViewDuikerTitle_dkrAccountActief}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrAccountVerif}"/>
+            <h:outputText value="#{duikerController.selected.dkrAccountVerif}" title="#{bundle.ViewDuikerTitle_dkrAccountVerif}"/>
+            <h:outputText value="#{bundle.ViewDuikerLabel_dkrAccVerDoor}"/>
+            <h:outputText value="#{duikerController.selected.dkrAccVerDoor}" title="#{bundle.ViewDuikerTitle_dkrAccVerDoor}"/>
+          </p:panelGrid>
+          <p:commandButton value="#{bundle.Close}" onclick="DuikerViewDialog.hide()"/>
+        </h:panelGroup>
+      </h:form>
+    </p:dialog>
+
+  </ui:composition>
+</html>
